@@ -1,0 +1,169 @@
+<div className="w-screen min-h-screen bg-gray-100">
+  <main className="m-auto bg-white max-w-screen-2xl">
+    <nav className="flex justify-between p-2 bg-white">
+      <a className="text-2xl font-bold text-gray-700" href="#">
+        {" "} OpenTable{" "}
+      </a>
+      <div>
+        <div className="flex">
+          <button
+            className="p-1 px-4 mr-3 text-white bg-blue-400 border rounded"
+          >
+            Sign In
+          </button>
+          <button className="p-1 px-4 text-black border rounded">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </nav>
+    {/* Header */}
+    <div className="overflow-hidden h-96">
+      <div
+        className="bg-center bg-gradient-to-r from-[#0f1f47] to-[#5f6984] h-full flex justify-center items-center"
+      >
+        <h1 className="text-center text-white capitalize text-7xl text-shadow">
+          Milestones Grill (Toronto)
+        </h1>
+      </div>
+    </div>
+    {/* Description */}
+    <div className="flex items-start justify-between w-2/3 m-auto -mt-11">
+      <div className="bg-white w-[70%] rounded p-3 shadow">
+        {/* Restaurant nav */}
+        <nav className="flex pb-2 text-base border-b">
+          <a href="#" className="mr-7"> Overview </a>
+          <a href="#" className="mr-7"> Menu </a>
+        </nav>
+        <div className="pb-6 mt-4 border-b">
+          <h1 className="text-6xl font-bold">Milestones Grill</h1>
+        </div>
+        <div className="flex items-end">
+          <div className="flex items-center mt-2 ratings">
+            <p>****</p>
+            <p className="ml-3 text-base">4.0</p>
+          </div>
+          <div>
+            <p className="ml-4 text-base">101 Reviews</p>
+          </div>
+        </div>
+        <div className="mt-4">
+          <p className="text-lg font-light">
+            Just a stone’s throw away from the stunning Worthing Seaside, Casa
+            Ciro Italian Mediterranean restaurant offers relaxed, outdoor and
+            indoor dining from lunch through to dinner. Taking inspiration from
+            the heart of Italy, Casa Ciro offers all the menu classics as well
+            as those with a twist. From Sardinian porchetta to Sicilian arancini
+            balls, locally caught seafood to our ever-popular Casa Ciro
+            signature dishes such as our Mozzarella in Carrozza.
+          </p>
+        </div>
+        <div>
+          <h1 className="pb-5 mt-10 text-3xl font-bold border-b mb-7">
+            5 Photos
+          </h1>
+          <div className="flex flex-wrap">
+            <img
+              className="w-56 mb-1 mr-1 h-44"
+              src="https://resizer.otstatic.com/v2/photos/xlarge/1/52397363.webp"
+              alt=""
+            />
+            <img
+              className="w-56 mb-1 mr-1 h-44"
+              src="https://resizer.otstatic.com/v2/photos/xlarge/2/51596745.webp"
+              alt=""
+            />
+            <img
+              className="w-56 mb-1 mr-1 h-44"
+              src="https://resizer.otstatic.com/v2/photos/xlarge/2/51596747.webp"
+              alt=""
+            />
+            <img
+              className="w-56 mb-1 mr-1 h-44"
+              src="https://resizer.otstatic.com/v2/photos/xlarge/2/51596750.webp"
+              alt=""
+            />
+            <img
+              className="w-56 mb-1 mr-1 h-44"
+              src="https://resizer.otstatic.com/v2/photos/xlarge/2/51596753.webp"
+              alt=""
+            />
+          </div>
+        </div>
+        <div>
+          <h1 className="p-5 mt-10 text-3xl font-bold border-b mb-7">
+            {" "} What 100 people are saying
+          </h1>
+          <div>
+            <div className="border-b pb-7 mb-7">
+              <div className="flex">
+                <div className="flex flex-col items-center w-1/6">
+                  <div
+                    className="flex items-center justify-center w-16 h-16 bg-blue-400 rounded-full"
+                  >
+                    <h2 className="text-2xl text-white">CK</h2>
+                  </div>
+                  <p>Clayton Klein</p>
+                </div>
+                <div className="w-5/6 ml-10">
+                  <div className="flex items-center">
+                    <div className="flex mr-5">****</div>
+                  </div>
+                  <div className="mt-5">
+                    <p className="text-lg font-light">
+                      Staff were very friendly and dealt efficiently with a
+                      misunderstanding over one food order, so good marks for
+                      service. The halloumi stack was very tasty and the chicken
+                      schnitzel went down well. Recommend!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Reservation */}
+      <div className="w-[27%] relative text-base">
+        <div className="fixed w-[15%] bg-white rounded p-3 shadow">
+          <div className="pb-2 font-bold text-center border-b">
+            <h4 className="text-lg mr-7">Make a reservation</h4>
+          </div>
+          <div className="flex flex-col my-3">
+            <label htmlFor="">Party Size</label>
+            <select className="py-3 font-light border-b" name="" id="">
+              <option value="">1 person</option>
+              <option value="">2 people</option>
+            </select>
+          </div>
+          <div className="flex justify-between">
+            <div className="flex flex-col w-[48%]">
+              <label htmlFor="">Date</label>
+              <input
+                className="py-3 font-light border-b w-28"
+                type="date"
+                name=""
+                id=""
+              />
+            </div>
+            <div className="flex flex-col w-[48%]">
+              <label htmlFor="">Time</label>
+              <select className="py-3 font-light border-b" name="" id="">
+                <option value="">7:30 AM</option>
+                <option value="">12:00 PM</option>
+                <option value="">19:30 PM</option>
+              </select>
+            </div>
+          </div>
+          <div className="mt-5">
+            <button
+              className="w-full h-16 px-4 font-bold text-white bg-red-600 rounded"
+            >
+              Find a Time
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,63 @@
+<div className="w-screen min-h-screen bg-gray-100">
+  <div className="m-auto bg-white max-w-screen-2xl">
+    <nav className="flex justify-between p-2 bg-white">
+      <a className="text-2xl font-bold text-gray-700" href="#">
+        {" "} OpenTable{" "}
+      </a>
+      <div>
+        <div className="flex">
+          <button
+            className="p-1 px-4 mr-3 text-white bg-blue-400 border rounded"
+          >
+            Sign In
+          </button>
+          <button className="p-1 px-4 text-black border rounded">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </nav>
+    {/* Header */}
+    <div className="overflow-hidden h-96">
+      <div
+        className="bg-center bg-gradient-to-r from-[#0f1f47] to-[#5f6984] h-full flex justify-center items-center"
+      >
+        <h1 className="text-center text-white capitalize text-7xl text-shadow">
+          Milestones Grill (Toronto)
+        </h1>
+      </div>
+    </div>
+    {/* Description */}
+    <div className="flex items-start justify-between w-2/3 m-auto -mt-11">
+      <div className="w-full p-3 bg-white rounded shadow">
+        {/* Restaurant nav */}
+        <nav className="flex pb-2 text-base border-b">
+          <a href="#" className="mr-7"> {" "} Overview{" "} </a>
+          <a href="#" className="mr-7"> {" "} Menu{" "} </a>
+        </nav>
+        {/* Menu */}
+        <main className="mt-5 bg-white">
+          <div>
+            <div className="pb-1 mt-4 mb-1">
+              <h1 className="text-4xl font-bold">Menu</h1>
+            </div>
+            <div className="flex flex-wrap justify-between">
+              {/* Card */}
+              <div className="border rounded p-3 w-[49%] mb-3">
+                <h3 className="text-lg font-bold">Burrito Mama Mia</h3>
+                <p className="mt-1 text-sm font-light">
+                  A burrito is a dish in Mexican and Tex-Mex cuisine that took
+                  form in Ciudad Juárez, consisting of a flour tortilla wrapped
+                  into a sealed cylindrical shape around various ingredients.
+                  The tortilla is sometimes lightly grilled or steamed to soften
+                  it, make it more pliable, and allow it to adhere to itself.
+                </p>
+                <p className="mt-7">$20.00</p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
