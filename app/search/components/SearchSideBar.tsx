@@ -10,7 +10,7 @@ export default function SearchSideBar() {
         <p className="text-base font-light">Sidney</p>
       </div>
       <div className="pb-4 mt-3 border-b">
-        <h1 className="mb-2">Cousine</h1>
+        <h1 className="mb-2">Cuisine</h1>
         <p className="text-base font-light">Brazilian</p>
         <p className="text-base font-light">Mexican</p>
         <p className="text-base font-light">Italian</p>
