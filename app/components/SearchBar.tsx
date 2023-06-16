@@ -22,8 +22,11 @@ export default function SearchBar() {
         className="py-2 text-white bg-red-600 rounded px-9"
         onClick={(e) => {
           e.preventDefault();
-          if (location === "banana") return;
-          router.push("/search");
+
+          if (location === "") return;
+
+          router.push(`/search?city=${location}`);
+          setLocation("");
         }}
       >
         Let&apos;s Go!
