@@ -16,19 +16,22 @@ export default function SearchSideBar({
       id: 1,
       price: PRICE.CHEAP,
       label: "$",
-      className: "w-full p-2 text-base text-center font-light border rounded-l",
+      className:
+        "w-full p-2 text-base text-center font-light border rounded-l hover:font-bold",
     },
     {
       id: 2,
       price: PRICE.REGULAR,
       label: "$$",
-      className: "w-full p-2 text-base text-center font-light border",
+      className:
+        "w-full p-2 text-base text-center font-light border hover:font-bold",
     },
     {
       id: 3,
       price: PRICE.EXPENSIVE,
       label: "$$$",
-      className: "w-full p-2 text-base text-center font-light border rounded-r",
+      className:
+        "w-full p-2 text-base text-center font-light border rounded-r hover:font-bold",
     },
   ];
 
@@ -46,7 +49,7 @@ export default function SearchSideBar({
                 city: location.name,
               },
             }}
-            className="text-base font-light capitalize"
+            className="text-base font-light capitalize hover:font-bold"
             key={location.id}
           >
             {location.name}
@@ -65,7 +68,7 @@ export default function SearchSideBar({
                 cuisine: cuisine.name,
               },
             }}
-            className="text-base font-light capitalize"
+            className="text-base font-light capitalize hover:font-bold"
             key={cuisine.id}
           >
             {cuisine.name}
