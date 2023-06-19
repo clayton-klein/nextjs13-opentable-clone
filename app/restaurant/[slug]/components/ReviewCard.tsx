@@ -18,7 +18,8 @@ export default function ReviewCard({ review }: { review: Review }) {
           <div className="flex items-center">
             <div className="flex mr-5">
               {/* here we had to do some changes in the Star component, because we're passing
-              a single review and not an array of reviews as it was expected */}
+              a single review and not an array of reviews as it was expected, then we passed 
+              reviews as a prop, but with an empty array just to satisfy TS */}
               <Stars rating={review.rating} reviews={[]} />
             </div>
           </div>
