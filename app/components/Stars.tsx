@@ -12,6 +12,7 @@ export default function Stars({
   reviews: Review[];
   rating?: number;
 }) {
+  // if we have the rating we don't want to calculate the rating from the reviews
   const reviewRating = rating || calculateReviewRatingAverage(reviews);
 
   const renderStars = () => {
