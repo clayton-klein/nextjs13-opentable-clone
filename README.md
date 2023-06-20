@@ -12,3 +12,5 @@ Tecnologias utilizadas:
 - Tailwind
 - Prisma ORM
 - PostgreSQL
+- Material UI
+- validator (biblioteca para validar inputs)
