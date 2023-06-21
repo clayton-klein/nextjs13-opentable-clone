@@ -14,3 +14,4 @@ Tecnologias utilizadas:
 - PostgreSQL
 - Material UI
 - validator (biblioteca para validar inputs)
+- jose (biblioteca para criar JSON Web Token (JWT))
