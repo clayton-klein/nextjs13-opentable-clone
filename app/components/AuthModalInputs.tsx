@@ -1,7 +1,7 @@
 interface Props {
   inputs: {
     firstName: string;
-    lastname: string;
+    lastName: string;
     email: string;
     phone: string;
     city: string;
@@ -36,7 +36,7 @@ export default function AuthModalInputs({
             type="text"
             className="w-[49%] border rounded px-2 py-3"
             placeholder="Last Name"
-            value={inputs.lastname}
+            value={inputs.lastName}
             onChange={handleChangeInput}
             name="lastName"
           />
