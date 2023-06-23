@@ -2,10 +2,13 @@
 // the "base" component/code was copied from MUI website, but since it has
 // click handlers, state and stuff we need to set it as a client component.
 
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import AuthModalInputs from "./AuthModalInputs";
+import useAuth from "../../hooks/useAuth";
+import { AuthenticationContext } from "../context/AuthContext";
+import { Alert, CircularProgress } from "@mui/material";
 
 const style = {
   position: "absolute" as "absolute",
@@ -19,17 +22,24 @@ const style = {
 };
 
 export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
-  const [open, setOpen] = useState(false);
   const [inputs, setInputs] = useState({
     firstName: "",
-    lastname: "",
+    lastName: "",
     email: "",
     phone: "",
     city: "",
     password: "",
   });
+
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const { signIn } = useAuth();
+  const { loading, data, error, setAuthState } = useContext(
+    AuthenticationContext
+  );
+
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs({
       ...inputs,
@@ -41,6 +51,33 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
     return isSignIn ? signInContent : signUpContent;
   };
 
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (isSignIn) {
+      if (inputs.password && inputs.email) {
+        return setDisabled(false);
+      }
+    } else {
+      if (
+        inputs.firstName &&
+        inputs.lastName &&
+        inputs.email &&
+        inputs.phone &&
+        inputs.city &&
+        inputs.password
+      ) {
+        return setDisabled(false);
+      }
+    }
+
+    setDisabled(true);
+  }, [inputs, isSignIn]);
+
+  const handleClick = () => {
+    if (isSignIn) {
+      signIn({ email: inputs.email, password: inputs.password });
+    }
+  };
   return (
     <div>
       <button
@@ -59,26 +96,44 @@ export default function AuthModal({ isSignIn }: { isSignIn: boolean }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div className="p2 h-[75vh]">
-            <div className="uppercase font-bold text-center pb-2 border-b mb-2">
-              <p className="text-sm">
-                {renderContent("Sign in", "Create Accont")}
-              </p>
+          {loading ? (
+            <div className="p2 h-[75vh] flex justify-center items-center">
+              <CircularProgress />
             </div>
-            <div className="m-auto">
-              <h2 className="font-light text-center text-2xl">
-                {renderContent("Log Into Your Account", "Create Your Account")}
-              </h2>
-              <AuthModalInputs
-                inputs={inputs}
-                handleChangeInput={handleChangeInput}
-                isSignIn={isSignIn}
-              />
-              <button className="uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:gray-400">
-                {renderContent("Sign In ", "Create Account")}
-              </button>
+          ) : (
+            <div className="p2 h-[75vh]">
+              {error && (
+                <Alert severity="error" className="mb-4">
+                  {error}
+                </Alert>
+              )}
+              <div className="uppercase font-bold text-center pb-2 border-b mb-2">
+                <p className="text-sm">
+                  {renderContent("Sign in", "Create Accont")}
+                </p>
+              </div>
+              <div className="m-auto">
+                <h2 className="font-light text-center text-2xl">
+                  {renderContent(
+                    "Log Into Your Account",
+                    "Create Your Account"
+                  )}
+                </h2>
+                <AuthModalInputs
+                  inputs={inputs}
+                  handleChangeInput={handleChangeInput}
+                  isSignIn={isSignIn}
+                />
+                <button
+                  disabled={disabled}
+                  className="uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400"
+                  onClick={handleClick}
+                >
+                  {renderContent("Sign In ", "Create Account")}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </Box>
       </Modal>
     </div>
