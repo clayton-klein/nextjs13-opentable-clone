@@ -107,8 +107,10 @@ export default async function handler(
     // this is the type of the algorithm we're going to send with the JWT
     // the variable must be called "alg"
     const alg = "HS256";
-    // this is the "secret" part of the JWT and only our server is aware of,
-    // it's in the .env file
+    /**
+     * this is the "secret" part of the JWT and only our server is aware of,
+     * it's in the .env file and to get it we need to encode it.
+     */
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
     const token = await new jose.SignJWT({
       email: user.email,
